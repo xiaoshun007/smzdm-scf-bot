@@ -8,9 +8,7 @@
 
 name: deploy2scf # 自定义workflow名称
 
-on:
-  release:
-    types: [published]
+on: [push] # push时触发
 
 jobs:
   deploy:
