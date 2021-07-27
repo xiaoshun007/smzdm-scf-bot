@@ -1,0 +1,13 @@
+component: scf
+name: smzdm-scf-bot
+
+inputs:
+  name: smzdm-scf-bot
+  src: ./
+  description: helloworld blank template function. Helloworld空白模板函数
+  handler: index.main_handler
+  runtime: Python3.6
+  namespace: default
+  region: ap-guangzhou
+  memorySize: 64
+  timeout: 300
