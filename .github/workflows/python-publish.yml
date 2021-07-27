@@ -25,11 +25,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install build
-    - name: Build package
-      run: python -m build
     - name: scf configure # scf cofigure, 配置appid, 地域和api秘钥等信息
       env: 
-        APPID: 1252618971
+        APPID: 1306479574
         REGION: ap-guangzhou
         SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }} # 值存放在第二步所说的secrets中
         SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }} # 同上
