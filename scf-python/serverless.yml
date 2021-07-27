@@ -1,13 +1,49 @@
-component: scf
-name: smzdm-scf-bot
+Resources:
+  default:
+    Type: TencentCloud::Serverless::Namespace
+    hello_world:
+      Type: TencentCloud::Serverless::Function
+      Properties:
+        CodeUri: ./
+        Type: Event
+        Description: This is a template function
+        Environment:
+          Variables:
+            ENV_FIRST: env1
+            ENV_SECOND: env2
+        Handler: index.main_handler
+        MemorySize: 64 # 配置配额，云函数的耗费会跟这个配置有关
+        Runtime: Python3.6
+        Timeout: 100
+        #VpcConfig:
+        #    VpcId: 'vpc-qdqc5k2p'
+        #    SubnetId: 'subnet-pad6l61i'
+        #Events:
+        #    timer:
+        #        Type: Timer
+        #        Properties:
+        #            CronExpression: '*/5 * * * *'
+        #            Enable: True
+        #    cli-appid.cos.ap-beijing.myqcloud.com: # full bucket name
+        #        Type: COS
+        #        Properties:
+        #            Bucket: cli-appid.cos.ap-beijing.myqcloud.com
+        #            Filter:
+        #                Prefix: filterdir/
+        #                Suffix: .jpg
+        #            Events: cos:ObjectCreated:*
+        #            Enable: True
+        #    topic:            # topic name
+        #        Type: CMQ
+        #        Properties:
+        #            Name: qname
+        #    hello_world_apigw:  # ${FunctionName} + '_apigw'
+        #        Type: APIGW
+        #        Properties:
+        #            StageName: release
+        #            ServiceId:
+        #            HttpMethod: ANY
 
-inputs:
-  name: smzdm-scf-bot
-  src: ./
-  description: helloworld blank template function. Helloworld空白模板函数
-  handler: index.main_handler
-  runtime: Python3.6
-  namespace: default
-  region: ap-guangzhou
-  memorySize: 64
-  timeout: 300
+Globals:
+  Function:
+    Timeout: 100
