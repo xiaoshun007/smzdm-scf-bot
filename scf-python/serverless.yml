@@ -4,9 +4,9 @@ Resources:
     hello_world:
       Type: TencentCloud::Serverless::Function
       Properties:
-        CodeUri: ./
+        CodeUri: ./smzdm-bot
         Type: Event
-        Description: This is a template function
+        Description: 什么值得买自动签到
         Environment:
           Variables:
             ENV_FIRST: env1
