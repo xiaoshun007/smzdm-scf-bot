@@ -1,7 +1,7 @@
 Resources:
   default:
     Type: TencentCloud::Serverless::Namespace
-    hello_world:
+    smzdm-bot: # 函数名
       Type: TencentCloud::Serverless::Function
       Properties:
         CodeUri: ./
