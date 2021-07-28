@@ -35,4 +35,4 @@ jobs:
         SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }} # 同上
       run: scf configure set --appid $APPID --region $REGION --secret-id $SECRET_ID --secret-key $SECRET_KEY
     - name: scf deploy # scf deploy
-      run: scf deploy -t ./scf-python/serverless.yml -n smzdm-bot -f
+      run: scf deploy -t ./scf-python/serverless.yml -f
